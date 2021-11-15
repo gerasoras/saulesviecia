@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OCO testing</title>
+	<style>
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	/*lentelės style */
+	table {
+		border-collapse: collapse;
+	}
+
+	tr:nth-child(odd) {
+		background: lightblue;
+	}
+
+	td {
+		padding: 4px 16px;
+	}
+</style>
+
+<!-- grafiko script (PlotlyJS) --> 
+<script src="https://cdn.plot.ly/plotly-2.4.2.min.js"></script>
+</head>
+
+<body>
+	<h1>Welcome to your dashboard!</h1>
+
+	<!-- teleport to the graph -->
+<script>
+        $(document).ready(function(){
+          $('nav div').click(function(){
+            var id = "grafikas" + $(this).attr('goto');
+            var top = $(id).position().top;
+            $('html').scrollTop(top);
+          });
+        });
+</script>
+	<div id='nav'>
+  <button goto='grafikas'>Teleport to the graph</div>
+</div>
+
+
+
+<!-- fetch CSV data-->
+
+	<h2> CSV --> string</h2>
+
+	<h3>Data: CSV 3</h3>
+
+	<p>Raw Data (string):</p>
+	<p id="csv"></p>
+
+<!--CSV to JSON-->
+
+<h2> CSV string to JSON object</h2>
+
+<p id="json"></p>
+
+<!--JSON as HTML Table--> 
+<h2> JSON object to HTML table object</h2>
+
+<p>HTML Table (object): </p>
+<div id="container"></div>
+
+<!-- Grafikas-->
+
+<h2 id="grafikas">PlotlyJS</h2>
+<p> Plot (object):</p>
+
+<div id="myPlot" style="width: 650px; height: 500px;"></div>
+
+
+	<!-- link js file-->
+	<script src="graphs.js"></script>
+</body>
+</html>
